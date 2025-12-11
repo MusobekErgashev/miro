@@ -11,6 +11,7 @@ import volvo from "../../assets/icons/Volvo.png"
 import deloitte from "../../assets/icons/deloitte.png"
 import okta from "../../assets/icons/okta.png"
 import section4 from '../../assets/images/section-4.png'
+import section5 from '../../assets/images/section-5.png'
 
 const Home = () => {
   return (
@@ -129,6 +130,23 @@ const Home = () => {
 
         <div className="">
           <img src={section4} alt="" />
+        </div>
+      </div>
+
+      {/* ----- section 5 ------ */}
+
+      <div className="px-[160px] py-[50px] flex justify-between items-center">
+        <div className="">
+          <img src={section5} alt="" />
+        </div>
+
+        <div className="max-w-[453px] flex flex-col gap-[20px]">
+          <h1 className="text-[48px] font-bold text-[#050038] max-w-[480px] leading-[56px]">Connect
+            your tools,
+            close your tabs</h1>
+          <p className="text-[#050038] opacity-60">Whether you want to edit your Google Docs, resolve Jira issues, or collaborate over Zoom, Miro has 100+ integrations with tools you already use and love.</p>
+
+          <a href="" className='text-[#4262FF] underline'>Learn more →</a>
         </div>
       </div>
     </div>
