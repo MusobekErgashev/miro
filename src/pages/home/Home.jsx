@@ -10,6 +10,7 @@ import cisco from "../../assets/icons/cisco.png"
 import volvo from "../../assets/icons/Volvo.png"
 import deloitte from "../../assets/icons/deloitte.png"
 import okta from "../../assets/icons/okta.png"
+import section4 from '../../assets/images/section-4.png'
 
 const Home = () => {
   return (
@@ -118,7 +119,18 @@ const Home = () => {
 
       {/* ----- section 4 ------ */}
 
-      <div className=""></div>
+      <div className="px-[160px] flex justify-between items-center">
+        <div className="max-w-[453px] flex flex-col gap-[20px]">
+          <h1 className="text-[48px] font-bold text-[#050038] max-w-[480px] leading-[56px]">Work together, wherever you work</h1>
+          <p className="text-[#050038] opacity-60">In the office, remote, or a mix of the two, with Miro, your team can connect, collaborate, and co-create in one space no matter where you are.</p>
+
+          <a href="" className='text-[#4262FF] underline'>Learn more →</a>
+        </div>
+
+        <div className="">
+          <img src={section4} alt="" />
+        </div>
+      </div>
     </div>
   )
 }
