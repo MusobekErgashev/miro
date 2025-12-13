@@ -10,10 +10,10 @@ import footerlogo from "../../assets/icons/footer-logo.png"
 
 const Footer = () => {
     return (
-        <div className='bg-[#050038] px-[30px] pt-[40px] text-white flex flex-col gap-[80px]'>
+        <div className='bg-[#050038] px-[30px] pt-10 text-white flex flex-col gap-20'>
             <div className='grid grid-cols-5'>
                 <ul className='flex flex-col gap-[7px] justify-between'>
-                    <h4 className='mb-[20px] text-[18px] font-bold'>Product</h4>
+                    <h4 className='mb-5 text-[18px] font-bold'>Product</h4>
                     <li className='text-[16px]'>
                         <a href="">Online whiteboard</a>
                     </li>
@@ -37,7 +37,7 @@ const Footer = () => {
                     </li>   
                 </ul>
                 <ul className='flex flex-col gap-[7px] justify-between'>
-                    <h4 className='mb-[20px] text-[18px] font-bold'>Product</h4>
+                    <h4 className='mb-5 text-[18px] font-bold'>Product</h4>
                     <li className='text-[16px]'>
                         <a href="">Online whiteboard</a>
                     </li>
@@ -61,7 +61,7 @@ const Footer = () => {
                     </li>   
                 </ul>
                 <ul className='flex flex-col gap-[7px] justify-between'>
-                    <h4 className='mb-[20px] text-[18px] font-bold'>Product</h4>
+                    <h4 className='mb-5 text-[18px] font-bold'>Product</h4>
                     <li className='text-[16px]'>
                         <a href="">Online whiteboard</a>
                     </li>
@@ -85,7 +85,7 @@ const Footer = () => {
                     </li>   
                 </ul>
                 <ul className='flex flex-col gap-[7px] justify-between'>
-                    <h4 className='mb-[20px] text-[18px] font-bold'>Product</h4>
+                    <h4 className='mb-5 text-[18px] font-bold'>Product</h4>
                     <li className='text-[16px]'>
                         <a href="">Online whiteboard</a>
                     </li>
@@ -109,7 +109,7 @@ const Footer = () => {
                     </li>   
                 </ul>
                 <ul className='flex flex-col gap-[7px] justify-between'>
-                    <h4 className='mb-[20px] text-[18px] font-bold'>Product</h4>
+                    <h4 className='mb-5 text-[18px] font-bold'>Product</h4>
                     <li className='text-[16px]'>
                         <a href="">Online whiteboard</a>
                     </li>
@@ -135,7 +135,7 @@ const Footer = () => {
             </div>
 
             <div className='flex justify-between border-t border-t-[#9B99AF] py-[55px]'>
-                <ul className='flex gap-[24px] items-center'>
+                <ul className='flex gap-6 items-center'>
                     <a href="">
                         <li>
                             <img src={twitter} alt="" />
@@ -175,7 +175,7 @@ const Footer = () => {
                     </a>
                 </ul>
 
-                <ul className='flex gap-[12px]'>
+                <ul className='flex gap-3'>
                     <a href="">
                         <li>
                             <img src={googleplay} alt="" />
