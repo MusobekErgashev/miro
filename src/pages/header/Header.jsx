@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from "../../assets/icons/logo.png"
 import langIcon from "../../assets/icons/lang-header.png"
+import { headerLinks } from '../../../db'
 
 const Header = () => {
     return (
@@ -12,25 +13,15 @@ const Header = () => {
                     </li>
                 </a>
 
-                <a href="#" className='text-[#050038] text-[15px]'>
-                    <li>Product</li>
-                </a>
-
-                <a href="#" className='text-[#050038] text-[15px]'>
-                    <li>Solutions</li>
-                </a>
-
-                <a href="#" className='text-[#050038] text-[15px]'>
-                    <li>Resources</li>
-                </a>
-
-                <a href="#" className='text-[#050038] text-[15px]'>
-                    <li>Enterprise</li>
-                </a>
-
-                <a href="#" className='text-[#050038] text-[15px]'>
-                    <li>Pricing</li>
-                </a>
+                {
+                    headerLinks.map((item) => {
+                        return (
+                            <a href={item.target} key={item.id} target='_blank' className='text-[#050038] text-[15px]'>
+                                <li>{item.linkName}</li>
+                            </a>
+                        )
+                    })
+                }
             </ul>
 
             <ul className='flex gap-[17px] items-center'>

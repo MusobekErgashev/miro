@@ -5,17 +5,17 @@ import getAppIcon from '../../assets/icons/get-app-icon.png'
 import getApp from '../../assets/icons/getapp.png'
 import capterra from '../../assets/icons/capterra.png'
 import section1 from '../../assets/images/section-1.png'
-import walmart from "../../assets/icons/Walmart.png"
-import cisco from "../../assets/icons/cisco.png"
-import volvo from "../../assets/icons/Volvo.png"
-import deloitte from "../../assets/icons/deloitte.png"
-import okta from "../../assets/icons/okta.png"
 import section4 from '../../assets/images/section-4.png'
 import section5 from '../../assets/images/section-5.png'
 import section7 from '../../assets/images/section-7.png'
 import section8 from '../../assets/images/section-8.png'
 import done from '../../assets/icons/done.png'
-import loved1 from '../../assets/icons/loved-1.png'
+import { trustedBy } from '../../../db'
+import { collaborate } from '../../../db'
+import { buildTheWay } from '../../../db'
+import { buildAllKinds } from '../../../db'
+import { companiesTrust } from '../../../db'
+import { lovedBy } from '../../../db'
 
 const Home = () => {
   return (
@@ -64,31 +64,17 @@ const Home = () => {
         <h2 className="text-[#050038] text-[18px] opacity-60">Trusted by 45M+ users</h2>
 
         <ul className="flex items-center w-full justify-between">
-          <a href="" className='w-max'>
-            <li>
-              <img src={walmart} alt="" />
-            </li>
-          </a>
-          <a href="" className='w-max'>
-            <li>
-              <img src={cisco} alt="" />
-            </li>
-          </a>
-          <a href="" className='w-max'>
-            <li>
-              <img src={volvo} alt="" />
-            </li>
-          </a>
-          <a href="" className='w-max'>
-            <li>
-              <img src={deloitte} alt="" />
-            </li>
-          </a>
-          <a href="" className='w-max'>
-            <li>
-              <img src={okta} alt="" />
-            </li>
-          </a>
+          {
+            trustedBy.map((item) => {
+              return (
+                <a href="" key={item.id} className='w-max'>
+                  <li>
+                    <img src={item.image} alt="" />
+                  </li>
+                </a>
+              )
+            })
+          }
         </ul>
       </div>
 
@@ -100,21 +86,17 @@ const Home = () => {
           constraints</h1>
 
         <div className="grid grid-cols-3 w-full gap-5">
-          <div className="flex flex-col gap-[26px]">
-            <h3 className="text-[#050038] font-bold text-[24px]">Free forever</h3>
+          {
+            collaborate.map((item) => {
+              return (
+                <div key={item.id} className="flex flex-col gap-[26px]">
+                  <h3 className="text-[#050038] font-bold text-[24px]">{item.heading}</h3>
 
-            <p className="text-[#050038] opacity-60">Our free plan gives you unlimited team members, 3 boards, and 300+ expert-made templates. Signing up with your work email lets you bring in your team faster. See our <a href="" className='text-[#4262FF]'>pricing plans</a> for more features.</p>
-          </div>
-          <div className="flex flex-col gap-[26px]">
-            <h3 className="text-[#050038] font-bold text-[24px]">Free forever</h3>
-
-            <p className="text-[#050038] opacity-60">Our free plan gives you unlimited team members, 3 boards, and 300+ expert-made templates. Signing up with your work email lets you bring in your team faster. See our <a href="" className='text-[#4262FF]'>pricing plans</a> for more features.</p>
-          </div>
-          <div className="flex flex-col gap-[26px]">
-            <h3 className="text-[#050038] font-bold text-[24px]">Free forever</h3>
-
-            <p className="text-[#050038] opacity-60">Our free plan gives you unlimited team members, 3 boards, and 300+ expert-made templates. Signing up with your work email lets you bring in your team faster. See our <a href="" className='text-[#4262FF]'>pricing plans</a> for more features.</p>
-          </div>
+                  <p className="text-[#050038] opacity-60">{item.paragraph}</p>
+                </div>
+              )
+            })
+          }
         </div>
 
         <a href="" className='text-[15px] text-white bg-[#4262FF] px-[17px] py-2.5 mt-[15px] w-max rounded-full flex items-center cursor-pointer'>
@@ -160,18 +142,15 @@ const Home = () => {
         <h1 className="text-[48px] font-bold text-[#050038] leading-14">Built for the way you work</h1>
 
         <ul className="flex gap-2">
-          <li className='text-[#050038] px-4 py-3 cursor-pointer border border-[#F2F2F2] rounded-full'>
-            Brainstorming
-          </li>
-          <li className='text-[#050038] px-4 py-3 cursor-pointer border border-[#F2F2F2] rounded-full'>
-            Brainstorming
-          </li>
-          <li className='text-[#050038] px-4 py-3 cursor-pointer border border-[#F2F2F2] rounded-full'>
-            Brainstorming
-          </li>
-          <li className='text-[#050038] px-4 py-3 cursor-pointer border border-[#F2F2F2] rounded-full'>
-            Brainstorming
-          </li>
+          {
+            buildTheWay.map((item) => {
+              return (
+                <li key={item.id} className='text-[#050038] px-4 py-3 cursor-pointer border border-[#F2F2F2] rounded-full'>
+                  {item.linkName}
+                </li>
+              )
+            })
+          }
         </ul>
 
         <div className="flex gap-10 justify-between">
@@ -194,18 +173,15 @@ const Home = () => {
         <h1 className="text-[48px] font-bold text-[#050038] leading-14">Built for all kinds of teams</h1>
 
         <ul className="flex gap-2">
-          <li className='text-[#050038] px-4 py-3 cursor-pointer border border-[#F2F2F2] rounded-full'>
-            UX & Design
-          </li>
-          <li className='text-[#050038] px-4 py-3 cursor-pointer border border-[#F2F2F2] rounded-full'>
-            UX & Design
-          </li>
-          <li className='text-[#050038] px-4 py-3 cursor-pointer border border-[#F2F2F2] rounded-full'>
-            UX & Design
-          </li>
-          <li className='text-[#050038] px-4 py-3 cursor-pointer border border-[#F2F2F2] rounded-full'>
-            UX & Design
-          </li>
+          {
+            buildAllKinds.map((item) => {
+              return (
+                <li key={item.id} className='text-[#050038] px-4 py-3 cursor-pointer border border-[#F2F2F2] rounded-full'>
+                  {item.linkName}
+                </li>
+              )
+            })
+          }
         </ul>
 
         <div className="flex gap-10 justify-between">
@@ -242,30 +218,16 @@ const Home = () => {
         </div>
 
         <ul className="grid grid-cols-3 grid-rows-2 gap-8 justify-between w-full">
-          <li className="flex flex-col gap-4 items-center">
-            <h1 className="text-[62px] font-black text-[#050038]">ISO</h1>
-            <p className="text-[18px] text-[#050038] max-w-[332px] text-center">ISO-27001 enterprise-grade security compliant</p>
-          </li>
-          <li className="flex flex-col gap-4 items-center">
-            <h1 className="text-[62px] font-black text-[#050038]">#1</h1>
-            <p className="text-[18px] text-[#050038] max-w-[332px] text-center">Visual Collaboration Platform on G2</p>
-          </li>
-          <li className="flex flex-col gap-4 items-center">
-            <h1 className="text-[62px] font-black text-[#050038]">99%</h1>
-            <p className="text-[18px] text-[#050038] max-w-[332px] text-center">of the Fortune 100 are customers</p>
-          </li>
-          <li className="flex flex-col gap-4 items-center">
-            <h1 className="text-[62px] font-black text-[#050038]">1,000+</h1>
-            <p className="text-[18px] text-[#050038] max-w-[332px] text-center">community- and expert-built templates</p>
-          </li>
-          <li className="flex flex-col gap-4 items-center">
-            <h1 className="text-[62px] font-black text-[#050038]">45M+</h1>
-            <p className="text-[18px] text-[#050038] max-w-[332px] text-center">users around the world</p>
-          </li>
-          <li className="flex flex-col gap-4 items-center">
-            <h1 className="text-[62px] font-black text-[#050038]">100+</h1>
-            <p className="text-[18px] text-[#050038] max-w-[332px] text-center">integrations with technology partners</p>
-          </li>
+          {
+            companiesTrust.map((item) => {
+              return (
+                <li key={item.id} className="flex flex-col gap-4 items-center">
+                  <h1 className="text-[62px] font-black text-[#050038]">{item.title}</h1>
+                  <p className="text-[18px] text-[#050038] max-w-[332px] text-center">{item.subTitle}</p>
+                </li>
+              )
+            })
+          }
         </ul>
       </div>
 
@@ -276,19 +238,25 @@ const Home = () => {
         <a href="" className="text-[#4262FF] w-max px-7 py-2 border rounded-full">See all customer stories →</a>
 
         <ul className="grid grid-cols-3 gap-14 mt-4">
-          <li className="flex flex-col gap-4">
-            <h2 className="text-[48px] font-bold text-[#050038]">vmware</h2>
+          {
+            lovedBy.map((item) => {
+              return (
+                <li key={item.id} className="flex flex-col gap-4">
+                  <h2 className="text-[48px] font-bold text-[#050038]">{item.title}</h2>
 
-            <p className="text-4.5 text-[#050038] opacity-60">“When the pandemic hit, those of us who thrive on in-person collaboration were worried that our creativity and productivity would suffer. Miro was the perfect tool to help us with collaboration, whiteboarding, and retrospectives while remote.”</p>
+                  <p className="text-4.5 text-[#050038] opacity-60 mb-5">{item.subTitle}</p>
 
-            <div className="flex gap-4 items-center mt-5">
-              <img src={loved1} alt="" />
-              <div className="flex flex-col">
-                <p className="text-3 text-[#050038] opacity-60 leading-5">Roxanne Mustafa</p>
-                <p className="text-3 text-[#050038] opacity-60 leading-5">Design Team Lead at VMware</p>
-              </div>
-            </div>
-          </li>
+                  <div className="flex gap-4 items-center mt-auto">
+                    <img src={item.image} alt="" />
+                    <div className="flex flex-col">
+                      <p className="text-3 text-[#050038] opacity-60 leading-5">{item.name}</p>
+                      <p className="text-3 text-[#050038] opacity-60 leading-5">{item.work}</p>
+                    </div>
+                  </div>
+                </li>
+              )
+            })
+          }
         </ul>
       </div>
 

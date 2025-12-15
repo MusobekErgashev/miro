@@ -7,130 +7,77 @@ import youtube from "../../assets/icons/you-tube.png"
 import googleplay from "../../assets/icons/google-play.png"
 import appstore from "../../assets/icons/apple-store.png"
 import footerlogo from "../../assets/icons/footer-logo.png"
+import { footerLinks } from '../../../db'
 
 const Footer = () => {
+    const product = footerLinks.filter(item => item.title === "Product");
+    const solution = footerLinks.filter(item => item.title === "Solutions");
+    const resource = footerLinks.filter(item => item.title === "Resources");
+    const company = footerLinks.filter(item => item.title === "Company");
+    const plan = footerLinks.filter(item => item.title === "Plans and Pricing");
+
     return (
         <div className='bg-[#050038] px-[30px] pt-10 text-white flex flex-col gap-20'>
             <div className='grid grid-cols-5'>
-                <ul className='flex flex-col gap-[7px] justify-between'>
-                    <h4 className='mb-5 text-[18px] font-bold'>Product</h4>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>   
+                <ul className='flex flex-col gap-[7px]'>
+                    <h4 className='mb-5 text-[18px] font-bold'>{product[0].title}</h4>
+                    {
+                        product.map((item) => {
+                            return (
+                                <li key={item.id} className='text-[16px]'>
+                                    <a href="">{item.linkName}</a>
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
-                <ul className='flex flex-col gap-[7px] justify-between'>
-                    <h4 className='mb-5 text-[18px] font-bold'>Product</h4>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>   
+                <ul className='flex flex-col gap-[7px]'>
+                    <h4 className='mb-5 text-[18px] font-bold'>{solution[0].title}</h4>
+                    {
+                        solution.map((item) => {
+                            return (
+                                <li key={item.id} className='text-[16px]'>
+                                    <a href="">{item.linkName}</a>
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
-                <ul className='flex flex-col gap-[7px] justify-between'>
-                    <h4 className='mb-5 text-[18px] font-bold'>Product</h4>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>   
+                <ul className='flex flex-col gap-[7px]'>
+                    <h4 className='mb-5 text-[18px] font-bold'>{resource[0].title}</h4>
+                    {
+                        resource.map((item) => {
+                            return (
+                                <li key={item.id} className='text-[16px]'>
+                                    <a href="">{item.linkName}</a>
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
-                <ul className='flex flex-col gap-[7px] justify-between'>
-                    <h4 className='mb-5 text-[18px] font-bold'>Product</h4>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>   
+                <ul className='flex flex-col gap-[7px]'>
+                    <h4 className='mb-5 text-[18px] font-bold'>{company[0].title}</h4>
+                    {
+                        company.map((item) => {
+                            return (
+                                <li key={item.id} className='text-[16px]'>
+                                    <a href="">{item.linkName}</a>
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
-                <ul className='flex flex-col gap-[7px] justify-between'>
-                    <h4 className='mb-5 text-[18px] font-bold'>Product</h4>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>
-                    <li className='text-[16px]'>
-                        <a href="">Online whiteboard</a>
-                    </li>   
+                <ul className='flex flex-col gap-[7px]'>
+                    <h4 className='mb-5 text-[18px] font-bold'>{plan[0].title}</h4>
+                    {
+                        plan.map((item) => {
+                            return (
+                                <li key={item.id} className='text-[16px]'>
+                                    <a href="">{item.linkName}</a>
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
             </div>
 
